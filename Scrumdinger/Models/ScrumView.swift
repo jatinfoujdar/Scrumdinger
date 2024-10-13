@@ -10,7 +10,10 @@ import SwiftUI
 struct ScrumView: View {
     var scrums : [DailyScrum]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(scrums , id: \.title) { scrum in
+            CardView(scrum: scrum)
+                .listRowBackground(scrum.theme.mainColor)
+        }
     }
 }
 
